@@ -45,10 +45,11 @@
                         echo '
                             <h3>' . $this->lang->line('appointment_registered') . '</h3>
                             <p>' . $this->lang->line('appointment_details_was_sent_to_you') . '</p>
-                            <a href="' . site_url() . '" class="btn btn-success btn-large">
-                                <span class="glyphicon glyphicon-calendar"></span> ' .
-                                $this->lang->line('go_to_booking_page') . '
-                            </a>
+                            <p>Quel que soit le lieu du département d’enseignement auquel vous serez rattaché, (Valbonne Sophia Antipolis, Cannes, Menton ou Nice)</p>
+                            <p> Votre inscription administrative sera réalisée à l’IUT de Nice au :</p>
+                            <p style="color:red;"> <b>SERVICE DE LA SCOLARITE</b> </br>
+                                                   <b>41 BOULEVARD NAPOLEON III</b> </br>
+                                                   <b>06206 NICE CEDEX 03</b></p>
                         ';
 
                         if ($this->config->item('google_sync_feature')) {
