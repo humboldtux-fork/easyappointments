@@ -187,6 +187,18 @@ class Appointments_Model extends CI_Model {
             throw new Exception('Appointment provider id is invalid.');
         }
 
+        // Check if the customer already has an appointment.
+        if (!isset($appointment['id'])) {
+          $num_rows = $this->db
+            ->select('*')
+            ->from('ea_appointments')
+            ->where('ea_appointments.id_users_customer', $appointment['id_users_customer'])
+            ->get()->num_rows();
+          if ($num_rows != 0) {
+            throw new Exception('Vous avez deja pris rendez-vous.');
+          }
+        }
+
         if ($appointment['is_unavailable'] == FALSE) {
             // Check if the customer's id is valid.
             $num_rows = $this->db
